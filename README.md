@@ -1,8 +1,6 @@
 # OJ
 Online Judge(目標是給考場使用){目前為練習程式語言用}
 
-目前為Demo版，功能只有一些，但是後面會陸續增加新功能。
-
 Web 端:</br>
 php-laravel 5.6
 
@@ -13,11 +11,14 @@ python3</br>
 Client 端:</br>
 golang
 
+目前功能:</br>
 Web 端教授可以新增題目，學生可以看有哪些題目</br>
 python3 為 Client 與 資料庫溝通的中介</br>
 golang 為跨平台，教室為任意作業系統都可直接上機考試</br>
 
-目前操作環境只測試在 macbook 上。
+目前為Demo版，功能只有一些，但是後面會陸續增加新功能。
+
+操作環境只在 macbook 上測試過。
 
 執行環境以 Docker 來執行，主要有三個容器，python mysql richarvey/nginx-php-fpm。
 
