@@ -8,9 +8,9 @@ Online Judge(設計給電腦教室考試用)
 執行環境以 Docker 來執行，主要有三個容器，python mysql richarvey/nginx-php-fpm。
 
 Docker 指令:</br>
-docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=admin -d mysql
-docker run -d -p 80:80 --name web --link mysql -v ~/OJ/php/OJ/:/var/www/html/ richarvey/nginx-php-fpm
-docker run -d -i -p 1121:1121 --name python --link mysql -v ~/OJ/python/server/:{your path} python
+docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=admin -d mysql</br>
+docker run -d -p 80:80 --name web --link mysql -v ~/OJ/php/OJ/:/var/www/html/ richarvey/nginx-php-fpm</br>
+docker run -d -i -p 1121:1121 --name python --link mysql -v ~/OJ/python/server/:{your path} python</br>
 
 golang 為前端環境執行，在 macbook 上。
 
