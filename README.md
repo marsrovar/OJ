@@ -25,7 +25,7 @@ golang 為跨平台，教室為任意作業系統都可直接上機考試</br>
 Docker 指令:</br>
 docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=admin -d mysql</br>
 docker run -d -p 80:80 --name web --link mysql -v ~/OJ/php/OJ/:/var/www/html/ richarvey/nginx-php-fpm</br>
-docker run -d -i -p 1121:1121 --name python --link mysql -v ~/OJ/python/server/:{your path} python</br>
+docker run -d -i -p {any port}:{any port} --name python --link mysql -v ~/OJ/python/server/:{your path} python</br>
 
 golang 為前端環境執行，在 macbook 上。
 
