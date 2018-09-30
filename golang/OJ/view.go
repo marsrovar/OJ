@@ -68,6 +68,7 @@ func viewLogin(g *gocui.Gui, lMaxX int, lMaxY int) error {
 		fmt.Fprintln(v, " ")
 		fmt.Fprintln(v, "Password")
 
+		changeStatusContext(g, "LOGIN")
 	}
 
 	if v, err := g.SetView("loginEmail", minX+10, minY+1, maxX-5, maxY-5); err != nil {
@@ -97,7 +98,6 @@ func viewLogin(g *gocui.Gui, lMaxX int, lMaxY int) error {
 		v.Frame = true
 		fmt.Fprintln(v, "Login")
 	}
-	changeStatusContext(g, "LOGIN")
 
 	return nil
 }
