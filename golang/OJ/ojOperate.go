@@ -100,6 +100,7 @@ func checkLogin(g *gocui.Gui, str string) error {
 		} else if str == "qp" {
 			g.SetViewOnTop("qplist")
 			g.SetCurrentView("qplist")
+			changeStatusContext(g, "D")
 		} else {
 			v, err := g.View("alert")
 			if err != nil {

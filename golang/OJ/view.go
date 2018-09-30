@@ -29,7 +29,7 @@ func viewStatusBar(g *gocui.Gui, lMaxX int, lMaxY int) error {
 		v.Frame = false
 		v.BgColor = gocui.ColorBlack
 		v.FgColor = gocui.ColorWhite
-		changeStatusContext(g, "D")
+		// changeStatusContext(g, "D")
 	}
 
 	return nil
@@ -97,6 +97,7 @@ func viewLogin(g *gocui.Gui, lMaxX int, lMaxY int) error {
 		v.Frame = true
 		fmt.Fprintln(v, "Login")
 	}
+	changeStatusContext(g, "LOGIN")
 
 	return nil
 }
@@ -243,18 +244,21 @@ func changeStatusContext(g *gocui.Gui, c string) error {
 	b := ""
 	ab := ""
 	switch c {
+	case "LOGIN":
+		i = 70 + i
+		b = b + frameText("Tab") + " Exchange   "
+		b = b + frameText("Enter") + " Login   "
 	case "D":
-		i = 150 + i
+		i = 100 + i
 		b = b + frameText("↑") + " Up   "
 		b = b + frameText("↓") + " Down   "
-		b = b + frameText("D") + " Delete   "
-		b = b + frameText("L") + " Show Logs   "
-		b = b + frameText("CTRL+N") + " Namespace   "
+		b = b + frameText("Enter") + " Show Question   "
 	case "SE":
-		i = i + 100
+		i = i + 125
 		b = b + frameText("↑") + " Up   "
 		b = b + frameText("↓") + " Down   "
 		b = b + frameText("Enter") + " Select   "
+		b = b + frameText("CTRL+N") + " Hide Code Tool   "
 	case "SL":
 		p, err := getSelectedQPlist(g)
 		if err != nil {
@@ -262,10 +266,12 @@ func changeStatusContext(g *gocui.Gui, c string) error {
 		}
 		num, err := strconv.Atoi(p)
 		ab = QP[num-1].Title
-		i = i + 100
+		i = i + 150
 		b = b + frameText("↑") + " Up   "
 		b = b + frameText("↓") + " Down   "
-		b = b + frameText("L") + " Hide Logs   "
+		b = b + frameText("CTRL+L") + " Hide Question   "
+		b = b + frameText("CTRL+O") + " New Line   "
+		b = b + frameText("CTRL+N") + " Show Code Tool   "
 	}
 	b = b + frameText("CTRL+C") + " Exit"
 
